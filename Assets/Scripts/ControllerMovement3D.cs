@@ -23,7 +23,7 @@ public class ControllerMovement3D : MonoBehaviour
     [SerializeField] private float _groundCheckDistance = 0.4f;
     [SerializeField] private float _groundCheckRadius = 0.25f;
     [SerializeField] private LayerMask _groundMask;
-    private bool _isGrounded;
+    [SerializeField] private bool _isGrounded;
     private Vector3 _groundNormal;
 
 
