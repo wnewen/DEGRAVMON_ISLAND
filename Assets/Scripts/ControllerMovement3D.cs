@@ -97,7 +97,7 @@ public class ControllerMovement3D : MonoBehaviour
         Vector3 start = transform.position + Vector3.up * _groundCheckOffset;
 
         // perfrom spherecast
-        if(Physics.SphereCast(start, _groundCheckRadius, Vector3.down, out RaycastHit hit, _groundCheckDistance, _groundMask));
+        if(Physics.SphereCast(start, _groundCheckRadius, Vector3.down, out RaycastHit hit, _groundCheckDistance, _groundMask))
         {
             return true;
         }
