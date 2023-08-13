@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Level1/MainScene.unity
+    guid: 0c3e8406978566345948e93ffeb31d35
+  - enabled: 1
+    path: Assets/Scenes/Level1/StoneHouse.unity
+    guid: 6a0b465486aa03d47b41f3d7a409a9e9
   m_configObjects: {}
