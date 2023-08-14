@@ -24,7 +24,6 @@ public class TalkButton : MonoBehaviour
             if (collider.CompareTag("Player"))
             {
                 _playerInside = true;
-                Debug.Log("player is detected");
                 break;
             }
         }

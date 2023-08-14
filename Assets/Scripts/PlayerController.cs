@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update() {
         if (_controllerMovement == null) return;
+        
         _controllerMovement.SetMovementInput(_moveInput);
         _controllerMovement.SetLookDirection(_moveInput);
         
