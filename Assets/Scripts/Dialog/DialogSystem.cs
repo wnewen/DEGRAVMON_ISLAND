@@ -109,11 +109,11 @@ public class DialogSystem : MonoBehaviour
         // }
 
         // complete typing system
-        int _letter = 0;
-        while(!_cancelTyping && _letter < _textList[_textFileLineIndex].Length - 1)
+        int letter = 0;
+        while(!_cancelTyping && letter < _textList[_textFileLineIndex].Length - 1)
         {
-            _textContent.text += _textList[_textFileLineIndex][_letter];
-            _letter ++;
+            _textContent.text += _textList[_textFileLineIndex][letter];
+            letter ++;
             yield return new WaitForSeconds(_typeSpeed);
         }
         _textContent.text = _textList[_textFileLineIndex];

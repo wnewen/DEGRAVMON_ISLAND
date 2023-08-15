@@ -3,14 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+
 public class PlayerController : MonoBehaviour
 {
     private ControllerMovement3D _controllerMovement;
     private Vector3 _moveInput;
+    private CharacterStates _characterStates;
 
     private void Awake() 
     {
         _controllerMovement = GetComponent<ControllerMovement3D>();
+        _characterStates = GetComponent<CharacterStates>();
+    }
+
+    private void Start() 
+    {
+        GameManager.Instance.RigisterPlayer(_characterStates);
     }
 
     public void OnMove(InputValue value)

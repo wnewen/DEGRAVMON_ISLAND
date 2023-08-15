@@ -27,7 +27,7 @@ public class ControllerMovement3D : MonoBehaviour
     private Vector3 _groundNormal;
 
 
-    private CharacterController _characterController;
+    private CharacterController _characterController; 
 
     private void Start()
     {
