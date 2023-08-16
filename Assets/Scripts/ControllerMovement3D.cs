@@ -7,7 +7,7 @@ public class ControllerMovement3D : MonoBehaviour
     [Header("Movement")]
     [SerializeField] private float _moveSpeed = 10f;
     [SerializeField] private float _turnSpeed = 10f;
-    [SerializeField] private GameObject _mainCamera;
+    public GameObject _mainCamera; // 須被 GameManager 讀取
     private float _speed = 0f;
     private bool _hasMoveInput;
     private Vector3 _moveInput;
