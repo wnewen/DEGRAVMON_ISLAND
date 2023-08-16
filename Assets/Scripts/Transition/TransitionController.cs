@@ -11,6 +11,7 @@ public class TransitionController : Singleton<TransitionController>
     private GameObject _player;
     private PlayerInput _playerInput;
     private CharacterController _characterController;
+    private bool _isRoomSceneTransition;
 
     protected override void Awake()
     {
@@ -27,6 +28,10 @@ public class TransitionController : Singleton<TransitionController>
             case TransitionPoint.TransitionType.SameScene:
                 StartCoroutine(Transition(SceneManager.GetActiveScene().name, transitionPoint._destinationTag));
                 break;
+            case TransitionPoint.TransitionType.RoomScene:
+                _isRoomSceneTransition = true;
+                StartCoroutine(Transition(transitionPoint._sceneName, transitionPoint._destinationTag));
+                break;
             case TransitionPoint.TransitionType.DifferentScene:
                 StartCoroutine(Transition(transitionPoint._sceneName, transitionPoint._destinationTag));
                 break;
@@ -37,8 +42,13 @@ public class TransitionController : Singleton<TransitionController>
 
     IEnumerator Transition(string sceneName, TransitionDestination.DestinationTag destinationTag)
     {
-        //TODO:保存數據
-        if (SceneManager.GetActiveScene().name != sceneName)
+        if ((SceneManager.GetActiveScene().name != sceneName) && _isRoomSceneTransition)
+        {
+            yield return SceneManager.LoadSceneAsync(sceneName);
+            _isRoomSceneTransition = false;
+            yield break;
+        }
+        else if (SceneManager.GetActiveScene().name != sceneName)
         {
             yield return SceneManager.LoadSceneAsync(sceneName);
             yield return Instantiate(_playerPrefab, GetDestination(destinationTag).transform.position, GetDestination(destinationTag).transform.rotation);

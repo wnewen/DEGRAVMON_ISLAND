@@ -17,10 +17,11 @@ public class TransitionPoint : MonoBehaviour
     /* define transition type choice */
     public enum TransitionType
     {
-        SameScene, DifferentScene
+        SameScene, DifferentScene, RoomScene
     }
     public TransitionType _transitonType; // 需要被TransitionController存取
     public TransitionDestination.DestinationTag _destinationTag; // 需要被TransitionController存取
+    public bool _clickTransitionButton = false; // 需要被SetTransitionVar存取
 
     private void Update() 
     {
@@ -48,20 +49,18 @@ public class TransitionPoint : MonoBehaviour
         /* player enter the detection range */
         if (playerInside)
         {
-            // Debug.Log("Player entered the detection zone!");
             _transitionButton.SetActive(true);
         }
         /* player exit the detection range */
         else if (!playerInside && _playerWasInside)
         {
-            // Debug.Log("Player exited the detection zone!");
             _transitionButton.SetActive(false);
         }
 
         /* update previous state */
         _playerWasInside = playerInside;
 
-        if (_transitionButton.activeSelf && Input.GetKeyDown(KeyCode.E) && playerInside)
+        if ((Input.GetKeyDown(KeyCode.E) && playerInside) || _clickTransitionButton)
         {
             // Debug.Log("press E enter !");
             // if(GameManager.Instance != null) Debug.Log("game manager instance is not null ");
