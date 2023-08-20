@@ -9,6 +9,10 @@ public class PlayerController : MonoBehaviour
     private ControllerMovement3D _controllerMovement;
     private Vector3 _moveInput;
     private CharacterStates _characterStates;
+    /* open & close bag GUI variables */
+    [SerializeField] private GameObject _myBag;
+    private bool _bagOpen;
+
 
     private void Awake() 
     {
@@ -37,6 +41,16 @@ public class PlayerController : MonoBehaviour
         
         _controllerMovement.SetMovementInput(_moveInput);
         _controllerMovement.SetLookDirection(_moveInput);
+        OpenMyBag();
         
+    }
+
+    private void OpenMyBag()
+    {
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            _bagOpen = !_bagOpen;
+            _myBag.SetActive(_bagOpen);
+        }
     }
 }
