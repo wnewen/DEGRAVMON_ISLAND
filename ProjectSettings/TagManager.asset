@@ -6,6 +6,7 @@ TagManager:
   tags:
   - NPC
   - Collection
+  - ItemModel
   layers:
   - Default
   - TransparentFX

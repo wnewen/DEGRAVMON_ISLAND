@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemName: fakeFur
   _itemImage: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
-  _itemModel: {fileID: 919132149155446097, guid: f558e770077c385479372dde4c14cfe9, type: 3}
+  _itemModel: {fileID: 4632224588569308661, guid: 4fc4552dd6e55be4a9d2298b959765cb, type: 3}
+  _itemHeld: 1
   _itemInfo: "\u5047\u76AE\u6BDB\u3002"

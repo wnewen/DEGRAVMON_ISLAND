@@ -10,7 +10,7 @@ public class Item : ScriptableObject
     public string _itemName;
     public Sprite _itemImage;
     public GameObject _itemModel;
-    // public int _itemHeld;
+    public int _itemHeld;
     [TextArea]
     public string _itemInfo;
     // public bool _equip;

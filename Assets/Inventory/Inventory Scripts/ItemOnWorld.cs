@@ -37,7 +37,7 @@ public class ItemOnWorld : MonoBehaviour
         else
         {
             Debug.Log("did not get item QAQ");
-            // _thisItem._itemHeld += 1;
+            _thisItem._itemHeld += 1;
         }
 
         InventoryManager.RefreshItem();
