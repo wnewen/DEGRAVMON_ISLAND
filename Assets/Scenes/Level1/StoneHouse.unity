@@ -275,8 +275,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1391506574}
-        m_TargetAssemblyTypeName: VeiwRotation, Assembly-CSharp
-        m_MethodName: RotateCamera
+        m_TargetAssemblyTypeName: ViewRotation, Assembly-CSharp
+        m_MethodName: RotateCounterClockwise
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -831,8 +831,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 104fe9345e7d3de4d868ce3c6ea8a105, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraTransform: {fileID: 458207718}
-  rotationSpeed: 45
+  _rotationSpeed: 5
+  _rotationCounter: 0
 --- !u!1 &1474199016
 GameObject:
   m_ObjectHideFlags: 0
@@ -915,7 +915,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1474199019}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1391506574}
+        m_TargetAssemblyTypeName: VeiwRotation, Assembly-CSharp
+        m_MethodName: RotateClockwise
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1474199019
 MonoBehaviour:
   m_ObjectHideFlags: 0
