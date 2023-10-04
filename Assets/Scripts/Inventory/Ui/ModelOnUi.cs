@@ -22,8 +22,8 @@ public class ModelOnUi : MonoBehaviour
     public float yMaxLimit = 90f;
     private float x = 0.0f;
     private float y = 0.0f;
-    private float targetX = 0f;
-    private float targetY = 0f;
+    public float targetX = 0f;
+    public float targetY = 0f;
     public float targetDistance = 0f;
     private float xVelocity = 1f;
     private float yVelocity = 1f;

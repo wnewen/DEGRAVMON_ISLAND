@@ -10,14 +10,15 @@ public class PlayerController : MonoBehaviour
     private Vector3 _moveInput;
     private CharacterStates _characterStates;
     /* open & close bag GUI variables */
-    [SerializeField] private GameObject _myBag;
-    private bool _bagOpen;
+    // [SerializeField] private GameObject _myBag;
+    // private bool _bagOpen;
 
 
     private void Awake() 
     {
         _controllerMovement = GetComponent<ControllerMovement3D>();
         _characterStates = GetComponent<CharacterStates>();
+        // _myBag = GameObject.Find("Bag");
     }
 
     private void Start() 
@@ -41,16 +42,16 @@ public class PlayerController : MonoBehaviour
         
         _controllerMovement.SetMovementInput(_moveInput);
         _controllerMovement.SetLookDirection(_moveInput);
-        OpenMyBag();
+        // OpenMyBag();
         
     }
 
-    private void OpenMyBag()
-    {
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            _bagOpen = !_bagOpen;
-            _myBag.SetActive(_bagOpen);
-        }
-    }
+    // private void OpenMyBag()
+    // {
+    //     if (Input.GetKeyDown(KeyCode.B))
+    //     {
+    //         _bagOpen = !_bagOpen;
+    //         _myBag.SetActive(_bagOpen);
+    //     }
+    // }
 }

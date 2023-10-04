@@ -16,6 +16,8 @@ public class ViewRotation : MonoBehaviour
     
     private GameObject _left;
     private GameObject _right;
+    private GameObject _toPrevious;
+    private GameObject _toNext;
 
     private void Awake() 
     {
@@ -24,6 +26,8 @@ public class ViewRotation : MonoBehaviour
 
         _left = GameObject.Find("Left");
         _right = GameObject.Find("Right");
+        _toPrevious = GameObject.Find("PreviousDoor");
+        _toNext = GameObject.Find("NextDoor");
     }
 
     void Update()
@@ -46,13 +50,17 @@ public class ViewRotation : MonoBehaviour
         {
             case 0:
                 _left.SetActive(false);
+                _toPrevious.SetActive(true);
                 break;
             case 3:
                 _right.SetActive(false);
+                _toNext.SetActive(true);
                 break;
             default:
                 _left.SetActive(true);
                 _right.SetActive(true);
+                _toPrevious.SetActive(false);
+                _toNext.SetActive(false);
                 break;
         }
     }   

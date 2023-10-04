@@ -6,15 +6,16 @@ using UnityEngine;
 /* pick up item in scene */
 public class ItemOnWorld : MonoBehaviour
 {
-    [SerializeField] private Item _thisItem;
+    public Item _thisItem; // read by ObjectManager
     [SerializeField] private Inventory _playerInventory;
 
     private void OnMouseDown()
     {
-        if (gameObject.CompareTag("Collection"))
+        if (gameObject.CompareTag("Item"))
         {
             AddNewItem();
-            Destroy(gameObject);
+            // Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 
@@ -32,11 +33,12 @@ public class ItemOnWorld : MonoBehaviour
         if (!_playerInventory._itemList.Contains(_thisItem))
         {
             _playerInventory._itemList.Add(_thisItem);
+            EventHandler.CallAfterItemPickedEvent(this.gameObject, _playerInventory._itemList.Count - 1);
             Debug.Log("got item !");
         }
         else
         {
-            Debug.Log("did not get item QAQ");
+            Debug.Log("item + 1 !");
             _thisItem._itemHeld += 1;
         }
 

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class TransitionPoint : MonoBehaviour
 {
-
     private GameObject _player;
 
     [Header("Detect Info")]
@@ -17,11 +16,11 @@ public class TransitionPoint : MonoBehaviour
     /* define transition type choice */
     public enum TransitionType
     {
-        SameScene, DifferentScene, RoomScene
+        SameScene, DifferentScene, RoomToScene, SceneToRoom, RoomToRoom
     }
-    public TransitionType _transitonType; // 需要被TransitionController存取
-    public TransitionDestination.DestinationTag _destinationTag; // 需要被TransitionController存取
-    public bool _clickTransitionButton = false; // 需要被SetTransitionVar存取
+    public TransitionType _transitonType; // 需要被TransitionController存取，傳送類型
+    public TransitionDestination.DestinationTag _destinationTag; // 需要被TransitionController存取，欲傳送的目的地
+    public bool _clickTransitionButton = false; // 需要被SetTransitionVar存取，利用案件控制是否傳送(在Room中使用)
 
     private void Update() 
     {

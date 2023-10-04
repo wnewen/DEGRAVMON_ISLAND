@@ -584,6 +584,7 @@ MonoBehaviour:
   _sceneName: 
   _transitonType: 0
   _destinationTag: 0
+  _clickTransitionButton: 0
 --- !u!114 &1020137793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -881,7 +882,8 @@ MonoBehaviour:
   _detectionRadius: 5
   _sceneName: GrassHill01
   _transitonType: 1
-  _destinationTag: 1
+  _destinationTag: 2
+  _clickTransitionButton: 0
 --- !u!64 &1522878432
 MeshCollider:
   m_ObjectHideFlags: 0
