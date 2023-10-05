@@ -2,10 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectManager : MonoBehaviour
+public class ObjectManager : Singleton<ObjectManager>
 {
     private Dictionary<string, bool> _itemAvailableDict = new Dictionary<string, bool>();
 
+
+    protected override void Awake()
+    {
+        base.Awake();
+        DontDestroyOnLoad(this);
+    }
+    
     private void OnEnable()
     {
         EventHandler.BeforeSceneUnloadEvent += OnBeforeSceneUnloadEvent;
@@ -55,6 +62,7 @@ public class ObjectManager : MonoBehaviour
         if (item != null)
         {
             _itemAvailableDict[item.name] = false;
+            Debug.Log("item in dic become false!");
         }
     }
 }

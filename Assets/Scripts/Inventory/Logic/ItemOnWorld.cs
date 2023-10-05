@@ -16,6 +16,7 @@ public class ItemOnWorld : MonoBehaviour
             AddNewItem();
             // Destroy(gameObject);
             gameObject.SetActive(false);
+            EventHandler.CallAfterItemPickedEvent(this.gameObject, _playerInventory._itemList.Count - 1);
         }
     }
 

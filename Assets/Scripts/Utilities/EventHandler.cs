@@ -18,6 +18,7 @@ public static class EventHandler
     public static event Action<GameObject, int> AfterItemPickedEvent;
     public static void CallAfterItemPickedEvent(GameObject item, int index)
     {
+        Debug.Log("suceed to CallAfterItemPickedEvent");
         AfterItemPickedEvent?.Invoke(item, index);
     }
 }
