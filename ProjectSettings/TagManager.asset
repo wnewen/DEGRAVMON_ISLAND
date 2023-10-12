@@ -8,6 +8,7 @@ TagManager:
   - Collection
   - ItemModel
   - Item
+  - Interavtive
   layers:
   - Default
   - TransparentFX

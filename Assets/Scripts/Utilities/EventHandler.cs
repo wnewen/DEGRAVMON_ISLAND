@@ -21,4 +21,10 @@ public static class EventHandler
         Debug.Log("suceed to CallAfterItemPickedEvent");
         AfterItemPickedEvent?.Invoke(item, index);
     }
+
+    public static event Action<Item> ItemUsedEvent;
+    public static void CallItemUsedEvent(Item item)
+    {
+        ItemUsedEvent?.Invoke(item);
+    }
 }

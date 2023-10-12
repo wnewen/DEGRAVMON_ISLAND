@@ -61,13 +61,8 @@ public class TransitionPoint : MonoBehaviour
 
         if ((Input.GetKeyDown(KeyCode.E) && playerInside) || _clickTransitionButton)
         {
-            // Debug.Log("press E enter !");
-            // if(GameManager.Instance != null) Debug.Log("game manager instance is not null ");
-            // else Debug.Log("game manager instance is null QAQ ");
-            // if(TransitionController.Instance != null) Debug.Log("transition controller instance is not null ");
-            // else Debug.Log("transition controller instance is null QAQ ");
             TransitionController.Instance.TransitionToDestination(this);
-            
+            _clickTransitionButton = false;
         }
     }
 }

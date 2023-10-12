@@ -39,9 +39,28 @@ public class InventoryManager : Singleton<InventoryManager>
         _modelOnUi = _camera.GetComponent<ModelOnUi>();
     }
 
-    private void OnEnable() {
+    private void OnEnable() 
+    {
         RefreshItem();
         Instance._itemInformation.text = "";
+        EventHandler.ItemUsedEvent += OnItemUsedEvent;
+    }
+
+    private void OnDisable() 
+    {
+        EventHandler.ItemUsedEvent -= OnItemUsedEvent;
+    }
+
+    private void OnItemUsedEvent(Item item)
+    {
+        var index = GetItemIndex(item);
+        Instance._myBag._itemList.RemoveAt(index);
+        RefreshItem();
+
+        if (Instance._myBag._itemList.Count == 0)
+        {
+            //empty myBag !
+        }
     }
 
     private void Update() 
@@ -122,5 +141,17 @@ public class InventoryManager : Singleton<InventoryManager>
         {
             CreateNewItem(Instance._myBag._itemList[i]);
         }
+    }
+
+    private int GetItemIndex(Item item)
+    {
+        for (int i = 0; i < Instance._myBag._itemList.Count; i++)
+        {
+            if (Instance._myBag._itemList[i] == item)
+            {
+                return i;
+            }
+        }
+        return -1;
     }
 }

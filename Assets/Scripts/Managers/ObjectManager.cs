@@ -5,6 +5,7 @@ using UnityEngine;
 public class ObjectManager : Singleton<ObjectManager>
 {
     private Dictionary<string, bool> _itemAvailableDict = new Dictionary<string, bool>();
+    private Dictionary<string, bool> _interactiveStateDict = new Dictionary<string, bool>();
 
 
     protected override void Awake()
@@ -33,11 +34,15 @@ public class ObjectManager : Singleton<ObjectManager>
 
         foreach (var item in items)
         {
-            // ItemOnWorld itemOnWorld;
-            // itemOnWorld = item.GetComponent<ItemOnWorld>();
-
             if (!_itemAvailableDict.ContainsKey(item.name))
                 _itemAvailableDict.Add(item.name, true);
+        }
+        foreach (var item in FindObjectsOfType<Interactive>())
+        {
+            if (_interactiveStateDict.ContainsKey(item.name))
+                _interactiveStateDict[item.name] = item._isDone;
+            else
+                _interactiveStateDict.Add(item.name, item._isDone);
         }
     }
 
@@ -47,13 +52,17 @@ public class ObjectManager : Singleton<ObjectManager>
 
         foreach (var item in items)
         {
-            // ItemOnWorld itemOnWorld;
-            // itemOnWorld = item.GetComponent<ItemOnWorld>();
-
             if (!_itemAvailableDict.ContainsKey(item.name))
                 _itemAvailableDict.Add(item.name, true);
             else
-                item.gameObject.SetActive(_itemAvailableDict[item.name]);          
+                item.gameObject.SetActive(_itemAvailableDict[item.name]);    
+        }
+        foreach (var item in FindObjectsOfType<Interactive>())
+        {
+            if (_interactiveStateDict.ContainsKey(item.name))
+                item._isDone = _interactiveStateDict[item.name];
+            else
+                _interactiveStateDict.Add(item.name, item._isDone);  
         }
     }
 
@@ -62,7 +71,6 @@ public class ObjectManager : Singleton<ObjectManager>
         if (item != null)
         {
             _itemAvailableDict[item.name] = false;
-            Debug.Log("item in dic become false!");
         }
     }
 }
