@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -12,6 +13,7 @@ public class PlayerController : MonoBehaviour
     /* open & close bag GUI variables */
     // [SerializeField] private GameObject _myBag;
     // private bool _bagOpen;
+    private Animator _anim;
 
 
     private void Awake() 
@@ -19,6 +21,7 @@ public class PlayerController : MonoBehaviour
         _controllerMovement = GetComponent<ControllerMovement3D>();
         _characterStates = GetComponent<CharacterStates>();
         // _myBag = GameObject.Find("Bag");
+        _anim = GetComponent<Animator>();
     }
 
     private void Start() 
@@ -43,9 +46,13 @@ public class PlayerController : MonoBehaviour
         _controllerMovement.SetMovementInput(_moveInput);
         _controllerMovement.SetLookDirection(_moveInput);
         // OpenMyBag();
-        
+        SwitchAnimation();
     }
 
+    private void SwitchAnimation()
+    {
+        _anim.SetFloat("speed", _moveInput.x);
+    }
     // private void OpenMyBag()
     // {
     //     if (Input.GetKeyDown(KeyCode.B))
