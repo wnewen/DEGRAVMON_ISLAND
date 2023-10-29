@@ -35,11 +35,11 @@ public class ItemOnWorld : MonoBehaviour
         {
             _playerInventory._itemList.Add(_thisItem);
             EventHandler.CallAfterItemPickedEvent(this.gameObject, _playerInventory._itemList.Count - 1);
-            Debug.Log("got item !");
+            // Debug.Log("got item !");
         }
         else
         {
-            Debug.Log("item + 1 !");
+            // Debug.Log("item + 1 !");
             _thisItem._itemHeld += 1;
         }
 

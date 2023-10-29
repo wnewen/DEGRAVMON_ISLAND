@@ -10,7 +10,7 @@ public class Interactive : MonoBehaviour
     public Inventory _myBag;
     
 
-    private void Awake() 
+    private void OnEnable() 
     {
         instance = this;
     }
@@ -25,27 +25,29 @@ public class Interactive : MonoBehaviour
             {
                 _isDone = true;
                 // use item and remove item from bag
-                OnClickAction();
+                // InteractingAction();
                 EventHandler.CallItemUsedEvent(_requiredItem);
             }
+            InteractingAction();
+            
         }
         // if (item == _requiredItem && !_isDone)
         // {
         //     _isDone = true;
         //     // use item and remove item from bag
-        //     OnClickAction();
+        //     InteractingAction();
         //     EventHandler.CallItemUsedEvent(item);
         // }
     }
 
-    protected virtual void OnClickAction()
+    protected virtual void InteractingAction()
     {
         Debug.Log("做動作");
     }
 
-    public virtual void EmptyClicked()
-    {
-        Debug.Log("空點");
-    }
+    // public virtual void EmptyClicked()
+    // {
+    //     Debug.Log("空點");
+    // }
     
 }

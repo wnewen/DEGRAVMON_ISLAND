@@ -52,5 +52,6 @@
         "temp/":true,
         "Temp/":true
     },
-    "dotnet.defaultSolution": "degravmon_island.sln"
+    "dotnet.defaultSolution": "degravmon_island.sln",
+    "dotnet.preferCSharpExtension": true
 }

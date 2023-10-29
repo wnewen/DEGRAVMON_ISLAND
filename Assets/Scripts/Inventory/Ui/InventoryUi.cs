@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InventoryUi : MonoBehaviour
+public class InventoryUI : MonoBehaviour
 {
     // [SerializeField] private Button _leftButton, _rightButton;
 

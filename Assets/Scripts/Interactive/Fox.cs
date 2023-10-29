@@ -26,7 +26,7 @@ public class Fox : Interactive
         }
     }
 
-    protected override void OnClickAction()
+    protected override void InteractingAction()
     {
         //do the action
     }

@@ -17,8 +17,8 @@ public class InventoryManager : Singleton<InventoryManager>
     [Header("item Detail")]
     public RawImage _itemDetail;
     public GameObject _camera;
-    public ModelOnUi _modelOnUi;
-    // public ModelOnUi _newScriptModelOnUi;
+    public ModelOnUI _modelOnUi;
+    // public ModelOnUI _newScriptModelOnUi;
 
    
     // void Awake() 
@@ -36,7 +36,7 @@ public class InventoryManager : Singleton<InventoryManager>
     private void Start() 
     {
         _camera = GameObject.Find("Camera");
-        _modelOnUi = _camera.GetComponent<ModelOnUi>();
+        _modelOnUi = _camera.GetComponent<ModelOnUI>();
     }
 
     private void OnEnable() 
@@ -97,7 +97,7 @@ public class InventoryManager : Singleton<InventoryManager>
             // Destroy(existModel);
             // Destroy(Instance._modelOnUi);
             // Instance._camera.AddComponent(Instance._newScriptModelOnUi.GetType());
-            // Instance._modelOnUi = Instance._camera.GetComponent<ModelOnUi>();
+            // Instance._modelOnUi = Instance._camera.GetComponent<ModelOnUI>();
         }
 
         

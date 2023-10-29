@@ -33,13 +33,11 @@ public class TalkButton : MonoBehaviour
         // player enter the detection range
         if (_playerInside && !_playerWasInside)
         {
-            Debug.Log("Player entered the detection zone!");
             _Button.SetActive(true);
         }
         // player exit the detection range
         else if (!_playerInside && _playerWasInside)
         {
-            Debug.Log("Player exited the detection zone!");
             _Button.SetActive(false);
             _talkUI.SetActive(false);
         }

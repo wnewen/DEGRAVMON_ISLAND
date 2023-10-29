@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ModelOnUi : MonoBehaviour
+public class ModelOnUI : MonoBehaviour
 {
     /// <summary>
     /// 脚本挂载新建相机上 —— 新相机Clear Flags清除标记设置为：Solid Color，不然会显示天空盒
