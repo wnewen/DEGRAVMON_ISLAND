@@ -13,5 +13,8 @@ MonoBehaviour:
   m_Name: FoxGrassHill01 Initial
   m_EditorClassIdentifier: 
   _dialogueList:
-  - initial content test1
-  - initial content test2
+  - "\u4F60\u597D......"
+  - "\u4F60\u8AAA\u6211\u70BA\u4EC0\u9EBC\u4E0D\u958B\u5FC3?"
+  - "\u56E0\u70BA\u6211\u53D7\u50B7\u4E86"
+  - "\u6709\u4EBA\u8981\u6252\u4E86\u6211\u7684\u76AE"
+  - "\u4F60\u53EF\u4EE5\u53BB\u5E6B\u6211\u627E\u4E00\u500B\u5047\u76AE\u6BDB\u55CE?"

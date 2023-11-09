@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: FoxGrassHill01 GotFakeFur
   m_EditorClassIdentifier: 
   _dialogueList:
-  - finished content test 1
-  - finished content test 2
+  - "\u4F60\u627E\u5230\u5B83\u4E86?!"
+  - "\u4F60\u771F\u662F\u500B\u597D\u4EBA!"
+  - "\u8B1D\u8B1D\u4F60!"

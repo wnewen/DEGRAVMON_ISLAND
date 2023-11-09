@@ -28,9 +28,9 @@ public class Interactive : MonoBehaviour
                 // InteractingAction();
                 EventHandler.CallItemUsedEvent(_requiredItem);
             }
-            InteractingAction();
             
         }
+        InteractingAction();
         // if (item == _requiredItem && !_isDone)
         // {
         //     _isDone = true;
