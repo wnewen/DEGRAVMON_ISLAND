@@ -13,7 +13,7 @@ public class CousorManager : MonoBehaviour
 //         if(ObjectAtMousePosition().Length > 0) _canClick = true;
 //         else _canClick = false;
 
-//         if (_canClick && Input.GetMouseButtonDown(0))
+//         if (_canClick && Input.GetMouseButtonDown(0))hhh
 //         {
 //             ClickAction(ObjectAtMousePosition()[0].gameObject);
 //         }
