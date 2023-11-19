@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem.LowLevel;
 
 public static class EventHandler
 {
@@ -32,5 +33,11 @@ public static class EventHandler
     public static void CallShowDialogueEvent(string dialogue)
     {
         ShowDialogueEvent?.Invoke(dialogue);
+    }
+
+    public static event Action<GameState> GameStateChangeEvent;
+    public static void CallGameStateChangeEvent(GameState gameState)
+    {
+        GameStateChangeEvent?.Invoke(gameState);
     }
 }

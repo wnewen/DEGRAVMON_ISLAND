@@ -14,6 +14,7 @@ public class GameManager : Singleton<GameManager>
     {
         base.Awake();
         DontDestroyOnLoad(this);
+        EventHandler.CallGameStateChangeEvent(GameState.GamePlay);
     }
 
     public void RigisterPlayer(CharacterStates player)

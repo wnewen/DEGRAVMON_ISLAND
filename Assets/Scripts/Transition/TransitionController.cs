@@ -15,6 +15,18 @@ public class TransitionController : Singleton<TransitionController>
     [SerializeField] private CanvasGroup _fadeCanvasGroup;
     [SerializeField] private float _fadeDuration;
     private bool _isFade;
+    private bool _canTransition;
+
+    
+    private void OnEnable()
+    {
+        EventHandler.GameStateChangeEvent += OnGameStateChangeEvent;
+    }
+
+    private void OnDisable()
+    {
+        EventHandler.GameStateChangeEvent -= OnGameStateChangeEvent;
+    }
 
     protected override void Awake()
     {
@@ -22,11 +34,14 @@ public class TransitionController : Singleton<TransitionController>
         DontDestroyOnLoad(this);
     }
 
-
+    private void OnGameStateChangeEvent(GameState gameState)
+    {
+        _canTransition = gameState == GameState.GamePlay;
+    }
     
     public void TransitionToDestination(TransitionPoint transitionPoint)
     {
-        if (!_isFade)
+        if (!_isFade && _canTransition)
         {
             switch (transitionPoint._transitonType)
             {
