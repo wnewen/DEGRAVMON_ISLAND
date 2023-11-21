@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
 
     private void SwitchAnimation()
     {
-        _anim.SetFloat("speed", _moveInput.x);
+        _anim.SetFloat("speed", _moveInput.magnitude);
     }
     // private void OpenMyBag()
     // {

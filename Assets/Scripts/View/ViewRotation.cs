@@ -5,11 +5,11 @@ using UnityEngine;
 public class ViewRotation : MonoBehaviour
 {
     [SerializeField] private float _rotationSpeed = 5.0f;
-    private Camera _camera;
+    [SerializeField] private Camera _camera;
     private Transform _cameraTransform;
     private float _targetRotation = 0.0f;
     private float _targetAngle = 0.0f;
-    private bool _isRotating = false;
+    [SerializeField] private bool _isRotating;
 
     float[] _rotationList = new float[] { 30f, 120f, 210f, 360f };
     public int _rotationCounter = 0;
@@ -21,7 +21,7 @@ public class ViewRotation : MonoBehaviour
 
     private void Awake() 
     {
-        _camera = GameObject.FindObjectOfType<Camera>();
+        // _camera = GameObject.FindObjectOfType<Camera>();
         _cameraTransform = _camera.transform;
 
         _left = GameObject.Find("Left");
@@ -38,7 +38,6 @@ public class ViewRotation : MonoBehaviour
             float step = _rotationSpeed * Time.deltaTime;            
             float currentRotation = _cameraTransform.eulerAngles.y;
             _cameraTransform.eulerAngles = new Vector3(0, Mathf.Lerp(currentRotation, _targetRotation, step), 0);
-
             /* stop rotation */
             if (Mathf.Abs(currentRotation - _targetRotation) < 1.0f)
             {

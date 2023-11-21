@@ -14,6 +14,10 @@ public class GameManager : Singleton<GameManager>
     {
         base.Awake();
         DontDestroyOnLoad(this);
+    }
+
+    private void Start()
+    {
         EventHandler.CallGameStateChangeEvent(GameState.GamePlay);
     }
 
@@ -27,7 +31,6 @@ public class GameManager : Singleton<GameManager>
         {
             _followCamera.Follow = _playerStates.transform;
             _followCamera.LookAt = _playerStates.transform;
-
         }
 
         /* set _mainCamera in ControllerMovement3D after transition */

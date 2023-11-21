@@ -37,6 +37,7 @@ public class TransitionController : Singleton<TransitionController>
     private void OnGameStateChangeEvent(GameState gameState)
     {
         _canTransition = gameState == GameState.GamePlay;
+        Debug.Log("_canTransition = " + _canTransition + " now !");
     }
     
     public void TransitionToDestination(TransitionPoint transitionPoint)

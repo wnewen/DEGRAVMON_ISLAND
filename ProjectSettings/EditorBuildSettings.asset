@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Menu.unity
+    path: Assets/Scenes/Main Menu.unity
     guid: 76917b6f8f093ff4dbb314d10d1e1949
   - enabled: 1
     path: Assets/Scenes/Level1/GrassHill01.unity
