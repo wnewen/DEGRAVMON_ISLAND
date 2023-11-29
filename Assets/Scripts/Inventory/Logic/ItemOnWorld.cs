@@ -8,26 +8,38 @@ public class ItemOnWorld : MonoBehaviour
 {
     public Item _thisItem; // read by ObjectManager
     [SerializeField] private Inventory _playerInventory;
+    [SerializeField] private float _detectionRadius = 3.0f;
+    private bool _playerWasInside = false;
 
-    private void OnMouseDown()
+    private void Update() 
     {
-        if (gameObject.CompareTag("Item"))
+        Vector3 _objectPosition = transform.position;
+
+        // collect colliders in radius
+        Collider[] _colliders = Physics.OverlapSphere(_objectPosition, _detectionRadius);
+
+        bool _playerInside = false; // check whether player in range
+
+        // check there is player in colliders
+        foreach (Collider collider in _colliders)
+        {
+            if (collider.CompareTag("Player"))
+            {
+                _playerInside = true;
+                break;
+            }
+        }
+
+        // update previous state
+        _playerWasInside = _playerInside;
+
+        if (_playerWasInside && Input.GetKeyDown(KeyCode.R))
         {
             AddNewItem();
-            // Destroy(gameObject);
             gameObject.SetActive(false);
             EventHandler.CallAfterItemPickedEvent(this.gameObject, _playerInventory._itemList.Count - 1);
         }
     }
-
-    // private void OnTriggerEnter(Collider other) 
-    // {
-    //     if (other.gameObject.CompareTag("Player"))
-    //     {
-    //         AddNewItem();
-    //         Destroy(gameObject);
-    //     }
-    // }
 
     public void AddNewItem()
     {
@@ -40,7 +52,7 @@ public class ItemOnWorld : MonoBehaviour
         else
         {
             // Debug.Log("item + 1 !");
-            _thisItem._itemHeld += 1;
+            // _thisItem._itemHeld += 1;
         }
 
         InventoryManager.RefreshItem();

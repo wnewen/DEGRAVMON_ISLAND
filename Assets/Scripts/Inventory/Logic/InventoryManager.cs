@@ -120,9 +120,12 @@ public class InventoryManager : Singleton<InventoryManager>
         /* create newItem by prefab, set newItem position & rotation */
         Slot newItem = Instantiate(Instance._slotPrefab, Instance._slotGrid.transform.position, Quaternion.identity);
         newItem.gameObject.transform.SetParent(Instance._slotGrid.transform); // newItem became child of bagGrid
-        
+        Vector3 desiredScale = new Vector3(1f, 1f, 1f); // set desired slot scale
+        newItem.transform.localScale = desiredScale; 
+
         //可以添加Item Name
         newItem._slotItem = item;
+        newItem._slotName.text = item._itemName;
         newItem._slotImage.sprite = item._itemImage;
         newItem._slotModel = item._itemModel;
         newItem._slotNumber.text = item._itemHeld.ToString();

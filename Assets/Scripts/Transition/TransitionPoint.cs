@@ -7,7 +7,7 @@ public class TransitionPoint : MonoBehaviour
     private GameObject _player;
 
     [Header("Detect Info")]
-    [SerializeField] private  GameObject _transitionButton;
+    [SerializeField] private  GameObject _transitionBoard;
     [SerializeField] private float _detectionRadius = 5.0f;
     private bool _playerWasInside = false; // check player is inside the detection range 
         
@@ -48,12 +48,12 @@ public class TransitionPoint : MonoBehaviour
         /* player enter the detection range */
         if (playerInside)
         {
-            _transitionButton.SetActive(true);
+            _transitionBoard.SetActive(true);
         }
         /* player exit the detection range */
         else if (!playerInside && _playerWasInside)
         {
-            _transitionButton.SetActive(false);
+            _transitionBoard.SetActive(false);
         }
 
         /* update previous state */

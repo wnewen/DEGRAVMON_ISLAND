@@ -45,7 +45,7 @@ public class TalkButton : MonoBehaviour
         // update previous state
         _playerWasInside = _playerInside;
 
-        if (_Button.activeSelf && Input.GetKeyDown(KeyCode.R))
+        if (_Button.activeSelf && Input.GetKeyDown(KeyCode.C))
         {
             _talkUI.SetActive(true);
             
@@ -54,7 +54,8 @@ public class TalkButton : MonoBehaviour
             {
                 interactive.CheckItem();
             }
-            else{
+            else
+            {
                 Debug.Log("did not get interactive");
             }
         }

@@ -24,30 +24,18 @@ public class Interactive : MonoBehaviour
             if (itemList[i] == _requiredItem)
             {
                 _isDone = true;
-                // use item and remove item from bag
-                // InteractingAction();
+                
+                /* use item and remove item from bag */
                 EventHandler.CallItemUsedEvent(_requiredItem);
             }
             
         }
         InteractingAction();
-        // if (item == _requiredItem && !_isDone)
-        // {
-        //     _isDone = true;
-        //     // use item and remove item from bag
-        //     InteractingAction();
-        //     EventHandler.CallItemUsedEvent(item);
-        // }
     }
 
     protected virtual void InteractingAction()
     {
         Debug.Log("做動作");
     }
-
-    // public virtual void EmptyClicked()
-    // {
-    //     Debug.Log("空點");
-    // }
     
 }

@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class Slot : MonoBehaviour
 {
     public Item _slotItem;
+    public Text _slotName;
     public Image _slotImage;
     public GameObject _slotModel;
     public Text _slotNumber;
