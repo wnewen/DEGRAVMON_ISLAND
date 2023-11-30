@@ -613,6 +613,7 @@ GameObject:
   - component: {fileID: 403739517}
   - component: {fileID: 403739516}
   - component: {fileID: 403739519}
+  - component: {fileID: 403739520}
   m_Layer: 5
   m_Name: Button to Grass ill 01
   m_TagString: Untagged
@@ -685,7 +686,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1391506569}
+      - m_Target: {fileID: 403739520}
         m_TargetAssemblyTypeName: SetTransitionVar, Assembly-CSharp
         m_MethodName: SetClickTransitionButton
         m_Mode: 1
@@ -747,12 +748,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 734800f52971b8c4c87d6ea2a227a24c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _transitionButton: {fileID: 0}
+  _transitionBoard: {fileID: 0}
   _detectionRadius: 5
   _sceneName: GrassHill01
   _transitonType: 2
   _destinationTag: 1
   _clickTransitionButton: 0
+--- !u!114 &403739520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403739514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5845b8d5809b06d4ab879b49856a6c38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &458207715
 GameObject:
   m_ObjectHideFlags: 0
@@ -1262,7 +1275,6 @@ GameObject:
   - component: {fileID: 1391506572}
   - component: {fileID: 1391506571}
   - component: {fileID: 1391506570}
-  - component: {fileID: 1391506569}
   - component: {fileID: 1391506574}
   m_Layer: 5
   m_Name: Canvas
@@ -1271,18 +1283,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1391506569
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1391506568}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5845b8d5809b06d4ab879b49856a6c38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1391506570
 MonoBehaviour:
   m_ObjectHideFlags: 0

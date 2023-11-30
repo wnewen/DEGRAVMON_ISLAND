@@ -8,7 +8,7 @@ public class SetTransitionVar : MonoBehaviour
 
     public void Start() 
     {
-        _transitionPoint = FindObjectOfType<TransitionPoint>();
+        _transitionPoint = GetComponent<TransitionPoint>();
     }
 
     public void SetClickTransitionButton()

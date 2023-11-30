@@ -17,5 +17,6 @@ public class Slot : MonoBehaviour
     {
         InventoryManager.UpdateItemInfo(_slotItem._itemInfo);
         InventoryManager.UpdateItemDetail(_slotItem._itemModel);
+        InventoryManager.ShowTransitionButton(_slotItem._itemName);
     }
 }

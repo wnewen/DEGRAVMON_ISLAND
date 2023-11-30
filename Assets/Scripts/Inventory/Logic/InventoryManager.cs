@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,6 +19,10 @@ public class InventoryManager : Singleton<InventoryManager>
     public RawImage _itemDetail;
     public GameObject _camera;
     public ModelOnUI _modelOnUi;
+    // [SerializeField] private GameObject _transitionButton;
+    private bool _usedWatch;
+    [SerializeField] private GameObject _watchButton;
+    [SerializeField] private GameObject _watchButtonBack;
     // public ModelOnUI _newScriptModelOnUi;
 
    
@@ -94,7 +99,7 @@ public class InventoryManager : Singleton<InventoryManager>
         if (existModel != null) 
         {
             Debug.Log("delete existModel");
-            // Destroy(existModel);
+            Destroy(existModel);
             // Destroy(Instance._modelOnUi);
             // Instance._camera.AddComponent(Instance._newScriptModelOnUi.GetType());
             // Instance._modelOnUi = Instance._camera.GetComponent<ModelOnUI>();
@@ -156,5 +161,31 @@ public class InventoryManager : Singleton<InventoryManager>
             }
         }
         return -1;
+    }
+
+    public void UseWatch()
+    {
+        _usedWatch = true;
+        //TODO: after got fur watch broken
+    }
+
+    public static void ShowTransitionButton(string itemName)
+    {
+        if(itemName == "手錶")
+        {
+            if (Instance._usedWatch)
+                Instance._watchButtonBack.SetActive(true);
+            if (!Instance._usedWatch)
+                Instance._watchButton.SetActive(true);
+            
+        }
+        else
+        {
+            if (Instance._usedWatch)
+                Instance._watchButtonBack.SetActive(false);
+            if (!Instance._usedWatch)
+                Instance._watchButton.SetActive(false);
+            
+        }
     }
 }

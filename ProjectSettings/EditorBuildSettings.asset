@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level1/Office.unity
     guid: 8f3c570d891721140a25de6ec87852aa
+  - enabled: 1
+    path: Assets/Scenes/Level1/ModernHome.unity
+    guid: 7ae7fac26bd8ed74389ba994e92f8b2c
   m_configObjects: {}
