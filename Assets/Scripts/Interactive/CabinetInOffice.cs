@@ -4,34 +4,39 @@ using UnityEngine;
 
 public class CabinetInOffice : Interactive
 {
-    private DialogueController _dialogueController;
+    // private DialogueController _dialogueController;
     private bool _playerGotToken;
     [SerializeField] private GameObject _LockUI;
+    [SerializeField] private GameObject _watch;
     private bool _isLockUIOpen;
 
     
     private void Awake() 
     {
-        _dialogueController = GetComponent<DialogueController>();
+        // _dialogueController = GetComponent<DialogueController>();
+        // _LockUI =
+        // _watch = GameObject.Find("Watch");
     }
 
     protected override void InteractingAction()
     {
         if (_isDone)
         {
-            _dialogueController.ShowDialogueFinished();
-            //player got watch == add watch to player's bag
+            // _dialogueController.ShowDialogueFinished();
+            //TODO: Open the cabinet
+            _watch.SetActive(true);
+            _isLockUIOpen = !_isLockUIOpen;
+            _LockUI.SetActive(_isLockUIOpen);
         }
         else
         {
             if(!_playerGotToken)
             {
-                //give player a token == add token to player's bag
-                
                 _playerGotToken = true;
             }
-            _dialogueController.ShowDialogueInitial();
-            //show ui to input the password
+            //_dialogueController.ShowDialogueInitial();
+
+            /* show ui to input the password */
             _isLockUIOpen = !_isLockUIOpen;
             _LockUI.SetActive(_isLockUIOpen);
         }
