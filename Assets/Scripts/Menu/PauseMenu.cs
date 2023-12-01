@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -20,5 +21,12 @@ public class PauseMenu : MonoBehaviour
             _pauseMenuOpen = !_pauseMenuOpen;
             _pauseMenu.SetActive(_pauseMenuOpen);
         }
+    }
+
+    public void BackToMainMenu()
+    {
+        EventHandler.CallBeforeSceneUnloadEvent();
+        SceneManager.LoadSceneAsync("MainMenu");
+        EventHandler.CallAfterSceneLoadedEvent();
     }
 }
