@@ -5,6 +5,8 @@ using UnityEngine;
 public class FoxLandslideIncident : Interactive
 {
     private DialogueController _dialogueController;
+    [SerializeField] private GameObject _soul;
+    // [SerializeField] private GameObject _congradulationsUI;
 
     
     private void Awake() 
@@ -15,7 +17,10 @@ public class FoxLandslideIncident : Interactive
     protected override void InteractingAction()
     {
         if (_isDone)
+        {
             _dialogueController.ShowDialogueFinished();
+            _soul.SetActive(true);
+        }
         else
             _dialogueController.ShowDialogueInitial();
     }

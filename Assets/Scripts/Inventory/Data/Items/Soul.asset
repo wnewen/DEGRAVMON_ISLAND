@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6303ae593c872724ba2f1fe3a345c4bc, type: 3}
+  m_Name: Soul
+  m_EditorClassIdentifier: 
+  _itemName: "\u9280\u72D0\u5011\u7684\u9748\u9B42"
+  _itemImage: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  _itemModel: {fileID: 5694189525409239187, guid: 89a5029aa3d80a943977b0c23c5df2a3, type: 3}
+  _itemHeld: 0
+  _itemInfo: "\u9280\u72D0\u5011\u7684\u9748\u9B42\uFF0C\u76EE\u524D\u9084\u4E0D\u6E05\u695A\u4ED6\u5011\u7684\u7528\u9014......"
