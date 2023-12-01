@@ -56,5 +56,6 @@ public class ItemOnWorld : MonoBehaviour
         }
 
         InventoryManager.RefreshItem();
+        InventoryManager.CheckPass(_thisItem._itemName);
     }
 }

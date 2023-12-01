@@ -23,6 +23,7 @@ public class InventoryManager : Singleton<InventoryManager>
     private bool _usedWatch;
     [SerializeField] private GameObject _watchButton;
     [SerializeField] private GameObject _watchButtonBack;
+    [SerializeField] private GameObject _congradulationsUI;
     // public ModelOnUI _newScriptModelOnUi;
 
    
@@ -186,6 +187,14 @@ public class InventoryManager : Singleton<InventoryManager>
             if (!Instance._usedWatch)
                 Instance._watchButton.SetActive(false);
             
+        }
+    }
+
+    public static void CheckPass(string itemName)
+    {
+        if(itemName == "銀狐們的靈魂")
+        {
+            Instance._congradulationsUI.SetActive(true);
         }
     }
 }

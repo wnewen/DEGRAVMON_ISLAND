@@ -8,6 +8,7 @@ public class Interactive : MonoBehaviour
     public Item _requiredItem;
     public bool _isDone;
     public Inventory _myBag;
+    private bool _congradulations;
     
 
     private void OnEnable() 
@@ -28,7 +29,6 @@ public class Interactive : MonoBehaviour
                 /* use item and remove item from bag */
                 EventHandler.CallItemUsedEvent(_requiredItem);
             }
-            
         }
         InteractingAction();
     }
