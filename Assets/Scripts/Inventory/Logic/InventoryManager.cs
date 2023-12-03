@@ -92,7 +92,7 @@ public class InventoryManager : Singleton<InventoryManager>
     public static void UpdateItemDetail(GameObject itemModel)
     {
         /* set itemModel postion */
-        Vector3 targetModelPosition = new Vector3(-1000, 0 ,1.6f);
+        Vector3 targetModelPosition = new Vector3(-1000, -1000 ,1.6f);
 
 
         /* delete exist model */
@@ -111,7 +111,7 @@ public class InventoryManager : Singleton<InventoryManager>
         /* create new model */
         GameObject newModel = Instantiate(itemModel);
         /* set newModel positon, rotation, scale */
-        // newModel.transform.position = targetModelPosition; // instance position
+        newModel.transform.position = targetModelPosition; // instance position
         // newModel.transform.rotation = Quaternion.identity; // no rotation
         // newModel.transform.localScale = new Vector3(6, 6, 6); // no scale
         Instance._modelOnUi.pivot = newModel.transform;

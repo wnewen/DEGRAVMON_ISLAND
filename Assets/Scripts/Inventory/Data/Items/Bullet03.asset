@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemName: "\u5B50\u5F4803"
   _itemImage: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  _itemModel: {fileID: 8100355114630075802, guid: fce1cbe7aae68234889037a81c735805, type: 3}
+  _itemModel: {fileID: 6023739477361340865, guid: dbd2e1fa241ceb64699317e62d3dceb4, type: 3}
   _itemHeld: 2
-  _itemInfo: "\u5B50\u5F48\u3002 \u62FF\u53BB\u554F\u770B\u770B\u78EF\u6C38\u5409\u5427~"
+  _itemInfo: "\u5B50\u5F48\u3002 \u9019\u88E1\u4E4B\u524D\u53EF\u80FD\u767C\u751F\u904E\u4EC0\u9EBC......"
