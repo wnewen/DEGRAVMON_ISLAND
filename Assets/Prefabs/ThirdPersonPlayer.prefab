@@ -1104,12 +1104,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveSpeed: 10
-  _turnSpeed: 20
+  _turnSpeed: 30
   _mainCamera: {fileID: 0}
   _gravity: -20
   _jumpHeight: 2.5
-  _groundCheckOffset: 0
-  _groundCheckDistance: 0.4
+  _groundCheckOffset: 0.2
+  _groundCheckDistance: 0.2
   _groundCheckRadius: 0.25
   _groundMask:
     serializedVersion: 2
