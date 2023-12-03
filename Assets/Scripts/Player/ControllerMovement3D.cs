@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ControllerMovement3D : MonoBehaviour
 {
@@ -25,6 +27,8 @@ public class ControllerMovement3D : MonoBehaviour
     [SerializeField] private LayerMask _groundMask;
     [SerializeField] private bool _isGrounded;
     private Vector3 _groundNormal;
+    private AudioSource _playerWalkingAudio;
+    private Scene _currentScene;
 
 
     private CharacterController _characterController; 
@@ -32,6 +36,8 @@ public class ControllerMovement3D : MonoBehaviour
     private void Start()
     {
         _characterController = GetComponent<CharacterController>();
+        _playerWalkingAudio = GetComponent<AudioSource>();
+        _currentScene = SceneManager.GetActiveScene();
     }
     
     public void SetMovementInput(Vector3 input)
@@ -74,6 +80,7 @@ public class ControllerMovement3D : MonoBehaviour
         if(_moveInput.magnitude < 0.1f)
         {
             _moveInput = Vector3.zero;
+            _playerWalkingAudio.Pause();
             return;
         }
 
@@ -81,6 +88,10 @@ public class ControllerMovement3D : MonoBehaviour
         if(_moveInput != Vector3.zero)
         {
             _speed = _moveSpeed;
+            if (!_playerWalkingAudio.isPlaying && (_currentScene.name == "GrassHill01"))
+            {
+                _playerWalkingAudio.Play();
+            }
         }
 
         targetRotation = Quaternion.LookRotation(_lookDirection).eulerAngles.y + _mainCamera.transform.rotation.eulerAngles.y;
