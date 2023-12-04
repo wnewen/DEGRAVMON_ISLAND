@@ -12,12 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Level1/GrassHill01.unity
     guid: 69fa1e66abf9aa84fa5ade5c5fcbbc7a
   - enabled: 1
-    path: Assets/Scenes/Level1/GrassHill02.unity
-    guid: 2d93a2e93245a9f40be13576e182675e
-  - enabled: 1
-    path: Assets/Scenes/Level1/StoneHouse.unity
-    guid: 6a0b465486aa03d47b41f3d7a409a9e9
-  - enabled: 1
     path: Assets/Scenes/Level1/LandslideIncident.unity
     guid: fb8db6dc9af5dbe4dae82a4009d2fe33
   - enabled: 1

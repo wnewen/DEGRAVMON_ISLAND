@@ -6,10 +6,12 @@ using UnityEngine;
 /* pick up item in scene */
 public class ItemOnWorld : MonoBehaviour
 {
+    [SerializeField] GameObject _Button;
     public Item _thisItem; // read by ObjectManager
     [SerializeField] private Inventory _playerInventory;
     [SerializeField] private float _detectionRadius = 3.0f;
     private bool _playerWasInside = false;
+
 
     private void Update() 
     {
@@ -30,6 +32,15 @@ public class ItemOnWorld : MonoBehaviour
             }
         }
 
+        if (_playerInside && !_playerWasInside)
+        {
+            _Button.SetActive(true);
+        }
+        else if (!_playerInside && _playerWasInside)
+        {
+            _Button.SetActive(false);
+        }
+
         // update previous state
         _playerWasInside = _playerInside;
 
@@ -37,6 +48,7 @@ public class ItemOnWorld : MonoBehaviour
         {
             AddNewItem();
             gameObject.SetActive(false);
+            _Button.SetActive(false);
             EventHandler.CallAfterItemPickedEvent(this.gameObject, _playerInventory._itemList.Count - 1);
         }
     }
