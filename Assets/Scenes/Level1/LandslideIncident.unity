@@ -2116,7 +2116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 734800f52971b8c4c87d6ea2a227a24c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _transitionBoard: {fileID: 1928291607}
+  _transitionBoard: {fileID: 398767498}
   _detectionRadius: 5
   _sceneName: GrassHill01
   _transitonType: 1
