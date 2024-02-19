@@ -41,7 +41,6 @@ public class PlayerController : MonoBehaviour
         
         _controllerMovement.SetMovementInput(_moveInput);
         _controllerMovement.SetLookDirection(_moveInput);
-        // OpenMyBag();
         SwitchAnimation();
     }
 

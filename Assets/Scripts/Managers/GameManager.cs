@@ -27,7 +27,7 @@ public class GameManager : Singleton<GameManager>
 
         /* get cinimachine new follow object after transition */
         _followCamera = FindObjectOfType<CinemachineFreeLook>();
-        if (_followCamera != null)
+        if (_followCamera == null)
         {
             _followCamera.Follow = _playerStates.transform;
             _followCamera.LookAt = _playerStates.transform;
