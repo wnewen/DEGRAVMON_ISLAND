@@ -17,12 +17,12 @@ public class ControllerMovement3D : MonoBehaviour
 
     [Header("Jumping")]
     [SerializeField] private float _gravity = -20f;
-    [SerializeField] private float _jumpHeight = 2.5f;
+    [SerializeField] private float _jumpHeight = 1.5f;
     private Vector3 _velocity;
 
     [Header("Grounding")]
-    [SerializeField] private float _groundCheckOffset = 0f;
-    [SerializeField] private float _groundCheckDistance = 0.4f;
+    [SerializeField] private float _groundCheckOffset = 0.35f;
+    [SerializeField] private float _groundCheckDistance = 0.2f;
     [SerializeField] private float _groundCheckRadius = 0.25f;
     [SerializeField] private LayerMask _groundMask;
     [SerializeField] private bool _isGrounded;

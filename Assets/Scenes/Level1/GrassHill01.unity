@@ -1938,20 +1938,36 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 230467484}
     - target: {fileID: 1792104351, guid: 47fb018dc00d8bd449ad8532e8c58760, type: 3}
+      propertyPath: _isGrounded
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1792104351, guid: 47fb018dc00d8bd449ad8532e8c58760, type: 3}
+      propertyPath: _jumpHeight
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1792104351, guid: 47fb018dc00d8bd449ad8532e8c58760, type: 3}
       propertyPath: _mainCamera
       value: 
       objectReference: {fileID: 230467484}
+    - target: {fileID: 1792104351, guid: 47fb018dc00d8bd449ad8532e8c58760, type: 3}
+      propertyPath: _groundCheckOffset
+      value: 0.35
+      objectReference: {fileID: 0}
     - target: {fileID: 3570506338880601111, guid: 47fb018dc00d8bd449ad8532e8c58760, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.02173591
+      value: 0.021735908
       objectReference: {fileID: 0}
     - target: {fileID: 3570506338880601111, guid: 47fb018dc00d8bd449ad8532e8c58760, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0000000018622052
+      value: 1.1096985e-16
       objectReference: {fileID: 0}
     - target: {fileID: 3570506338880601111, guid: 47fb018dc00d8bd449ad8532e8c58760, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 4.0486288e-11
+      value: -1.3568947e-18
+      objectReference: {fileID: 0}
+    - target: {fileID: 3570506339737255552, guid: 47fb018dc00d8bd449ad8532e8c58760, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.4399986
       objectReference: {fileID: 0}
     - target: {fileID: 3570506340091826952, guid: 47fb018dc00d8bd449ad8532e8c58760, type: 3}
       propertyPath: m_RootOrder
