@@ -99,8 +99,9 @@ public class InventoryManager : Singleton<InventoryManager>
         GameObject existModel = GameObject.FindGameObjectWithTag("ItemModel");
         if (existModel != null) 
         {
-            Debug.Log("delete existModel");
             Destroy(existModel);
+            Debug.Log("delete existModel");
+            Debug.Log(existModel.name);
             // Destroy(Instance._modelOnUi);
             // Instance._camera.AddComponent(Instance._newScriptModelOnUi.GetType());
             // Instance._modelOnUi = Instance._camera.GetComponent<ModelOnUI>();
