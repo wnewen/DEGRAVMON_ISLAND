@@ -13,6 +13,15 @@ public class ItemOnWorld : MonoBehaviour
     private bool _playerWasInside = false;
 
 
+    // private void OnEnable()
+    // {
+    //     EventHandler.GameStateChangeEvent += OnGameStateChangeEvent;
+    // }
+    
+    // private void OnDisable()
+    // {
+    //     EventHandler.GameStateChangeEvent -= OnGameStateChangeEvent;
+    // }
     private void Update() 
     {
         Vector3 _objectPosition = transform.position;
@@ -70,4 +79,13 @@ public class ItemOnWorld : MonoBehaviour
         InventoryManager.RefreshItem();
         InventoryManager.CheckPass(_thisItem._itemName);
     }
+
+    // private void OnGameStateChangeEvent(GameState gameState)
+    // {
+    //     if (gameState == GameState.NewGame)
+    //     {
+    //         _playerInventory._itemList.Clear();
+    //         InventoryManager.RefreshItem();
+    //     }
+    // }
 }

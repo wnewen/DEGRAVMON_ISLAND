@@ -50,11 +50,13 @@ public class InventoryManager : Singleton<InventoryManager>
         RefreshItem();
         Instance._itemInformation.text = "";
         EventHandler.ItemUsedEvent += OnItemUsedEvent;
+        EventHandler.GameStateChangeEvent += OnGameStateChangeEvent;
     }
 
     private void OnDisable() 
     {
         EventHandler.ItemUsedEvent -= OnItemUsedEvent;
+        EventHandler.GameStateChangeEvent -= OnGameStateChangeEvent;
     }
 
     private void OnItemUsedEvent(Item item)
@@ -196,6 +198,15 @@ public class InventoryManager : Singleton<InventoryManager>
         if(itemName == "銀狐們的靈魂")
         {
             Instance._congradulationsUI.SetActive(true);
+        }
+    }
+
+    private void OnGameStateChangeEvent(GameState gameState)
+    {
+        if (gameState == GameState.NewGame)
+        {
+            _myBag._itemList.Clear();
+            RefreshItem();
         }
     }
 }

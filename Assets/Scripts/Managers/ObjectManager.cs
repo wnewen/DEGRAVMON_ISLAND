@@ -19,6 +19,7 @@ public class ObjectManager : Singleton<ObjectManager>
         EventHandler.BeforeSceneUnloadEvent += OnBeforeSceneUnloadEvent;
         EventHandler.AfterSceneLoadedEvent += OnAfterSceneLoadedEvent;
         EventHandler.AfterItemPickedEvent += OnAfterItemPickedEvent;
+        EventHandler.GameStateChangeEvent += OnGameStateChangeEvent;
     }
 
     private void OnDisable() 
@@ -26,6 +27,7 @@ public class ObjectManager : Singleton<ObjectManager>
         EventHandler.BeforeSceneUnloadEvent -= OnBeforeSceneUnloadEvent;
         EventHandler.AfterSceneLoadedEvent -= OnAfterSceneLoadedEvent;
         EventHandler.AfterItemPickedEvent -= OnAfterItemPickedEvent;
+        EventHandler.GameStateChangeEvent -= OnGameStateChangeEvent;
     }
 
     private void OnBeforeSceneUnloadEvent()
@@ -43,6 +45,10 @@ public class ObjectManager : Singleton<ObjectManager>
                 _interactiveStateDict[item.name] = item._isDone;
             else
                 _interactiveStateDict.Add(item.name, item._isDone);
+        }
+        foreach (var item in _itemAvailableDict)
+        {
+            Debug.Log(item);
         }
     }
 
@@ -64,6 +70,10 @@ public class ObjectManager : Singleton<ObjectManager>
             else
                 _interactiveStateDict.Add(item.name, item._isDone);  
         }
+        foreach (var item in _itemAvailableDict)
+        {
+            Debug.Log(item);
+        }
     }
 
     private void OnAfterItemPickedEvent(GameObject item, int index)
@@ -71,6 +81,15 @@ public class ObjectManager : Singleton<ObjectManager>
         if (item != null)
         {
             _itemAvailableDict[item.name] = false;
+        }
+    }
+
+    private void OnGameStateChangeEvent(GameState gameState)
+    {
+        if (gameState == GameState.NewGame)
+        {
+            _itemAvailableDict.Clear();
+            _interactiveStateDict.Clear();
         }
     }
 }

@@ -15,7 +15,7 @@ public class TransitionController : Singleton<TransitionController>
     [SerializeField] private CanvasGroup _fadeCanvasGroup;
     [SerializeField] private float _fadeDuration;
     private bool _isFade;
-    private bool _canTransition;
+    private bool _canTransition = true;
 
     
     private void OnEnable()
@@ -36,8 +36,8 @@ public class TransitionController : Singleton<TransitionController>
 
     private void OnGameStateChangeEvent(GameState gameState)
     {
-        _canTransition = gameState == GameState.GamePlay;
-        Debug.Log("_canTransition = " + _canTransition + " now !");
+        // _canTransition = gameState == GameState.GamePlay;
+        // Debug.Log("_canTransition = " + _canTransition + " now !");
     }
     
     public void TransitionToDestination(TransitionPoint transitionPoint)
@@ -99,6 +99,7 @@ public class TransitionController : Singleton<TransitionController>
             yield return Fade(0);
             yield break;
         }
+        /* transition in the same scene */
         else
         {
             /* get components on player */

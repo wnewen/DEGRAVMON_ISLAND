@@ -5,5 +5,5 @@ using UnityEngine.InputSystem.LowLevel;
 
 public enum GameState 
 {
-    Pause, GamePlay
+    Pause, GamePlay, NewGame
 }
