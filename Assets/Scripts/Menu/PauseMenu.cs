@@ -11,15 +11,19 @@ public class PauseMenu : MonoBehaviour
     
     void Update()
     {
-        OpenPauseMenu();
+        TogglePauseMenu();
     }
 
-    private void OpenPauseMenu()
+    private void TogglePauseMenu()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             _pauseMenuOpen = !_pauseMenuOpen;
             _pauseMenu.SetActive(_pauseMenuOpen);
+            if (_pauseMenuOpen)
+                EventHandler.CallGameStateChangeEvent(GameState.Pause);               
+            else
+                EventHandler.CallGameStateChangeEvent(GameState.GamePlay);
         }
     }
 

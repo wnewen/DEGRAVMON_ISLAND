@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 
 public class MainMenu : MonoBehaviour
 {
+    // private void Awake()
+    // {
+    //     EventHandler.CallAfterSceneLoadedEvent();
+    // }
     public void PlayNewGame()
     {
         EventHandler.CallGameStateChangeEvent(GameState.NewGame);
