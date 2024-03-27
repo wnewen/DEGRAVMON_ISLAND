@@ -899,7 +899,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pauseMenuOpen: 0
-  _pauseMenu: {fileID: 0}
+  _pauseMenu: {fileID: 245973233}
+  _bookIcon: {fileID: 757112079}
 --- !u!1 &259698682
 GameObject:
   m_ObjectHideFlags: 0
@@ -1773,7 +1774,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &757112080
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1808,6 +1809,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pauseMenuOpen: 0
   _pauseMenu: {fileID: 245973233}
+  _bookIcon: {fileID: 0}
 --- !u!114 &757112082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2245,6 +2247,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pauseMenuOpen: 0
   _pauseMenu: {fileID: 0}
+  _bookIcon: {fileID: 0}
 --- !u!1 &814686569
 GameObject:
   m_ObjectHideFlags: 0
@@ -2299,7 +2302,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &873473598
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5105,6 +5108,8 @@ MonoBehaviour:
   _watchButton: {fileID: 1182574512}
   _watchButtonBack: {fileID: 32101709}
   _congradulationsUI: {fileID: 813274442}
+  _bagIcon: {fileID: 873473597}
+  _bookIcon: {fileID: 757112079}
 --- !u!4 &2053657088
 Transform:
   m_ObjectHideFlags: 0
