@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 /* deal with items in world & item not instantiate */
@@ -24,15 +25,9 @@ public class InventoryManager : Singleton<InventoryManager>
     [SerializeField] private GameObject _watchButton;
     [SerializeField] private GameObject _watchButtonBack;
     [SerializeField] private GameObject _congradulationsUI;
-    // public ModelOnUI _newScriptModelOnUi;
-
-   
-    // void Awake() 
-    // {
-    //     if (instance != null)
-    //         Destroy(this);
-    //     instance = this;
-    // }
+    [SerializeField] private GameObject _bagIcon;
+    [SerializeField] private GameObject _bookIcon;
+    private bool _canOpenBag;
     protected override void Awake()
     {
         base.Awake();
@@ -51,12 +46,14 @@ public class InventoryManager : Singleton<InventoryManager>
         Instance._itemInformation.text = "";
         EventHandler.ItemUsedEvent += OnItemUsedEvent;
         EventHandler.GameStateChangeEvent += OnGameStateChangeEvent;
+        EventHandler.AfterSceneLoadedEvent += OnAfterSceneLoadedEvent;
     }
 
     private void OnDisable() 
     {
         EventHandler.ItemUsedEvent -= OnItemUsedEvent;
         EventHandler.GameStateChangeEvent -= OnGameStateChangeEvent;
+        EventHandler.AfterSceneLoadedEvent -= OnAfterSceneLoadedEvent;
     }
 
     private void OnItemUsedEvent(Item item)
@@ -78,7 +75,7 @@ public class InventoryManager : Singleton<InventoryManager>
     
     private void OpenMyBag()
     {
-        if (Input.GetKeyDown(KeyCode.B))
+        if (Input.GetKeyDown(KeyCode.B) && _canOpenBag)
         {
             _bagOpen = !_bagOpen;
             _myBagUi.SetActive(_bagOpen);
@@ -207,6 +204,24 @@ public class InventoryManager : Singleton<InventoryManager>
         {
             _myBag._itemList.Clear();
             RefreshItem();
+        }
+    }
+
+    private void OnAfterSceneLoadedEvent()
+    {
+        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = currentScene.name;
+        if (sceneName == "MainMenu")
+        {
+            _bagIcon.SetActive(false);
+            _canOpenBag = false;
+            _bookIcon.SetActive(false);
+        }
+        else
+        {
+            _bagIcon.SetActive(true);
+            _canOpenBag = true;
+            _bookIcon.SetActive(true);
         }
     }
 }

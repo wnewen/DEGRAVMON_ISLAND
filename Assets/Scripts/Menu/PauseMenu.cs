@@ -8,7 +8,7 @@ public class PauseMenu : MonoBehaviour
 {
     [SerializeField] private bool _pauseMenuOpen;
     [SerializeField] private GameObject _pauseMenu;
-    
+    [SerializeField] private GameObject _bookIcon;
     void Update()
     {
         TogglePauseMenu();
@@ -16,7 +16,7 @@ public class PauseMenu : MonoBehaviour
 
     private void TogglePauseMenu()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && _bookIcon)
         {
             _pauseMenuOpen = !_pauseMenuOpen;
             _pauseMenu.SetActive(_pauseMenuOpen);
