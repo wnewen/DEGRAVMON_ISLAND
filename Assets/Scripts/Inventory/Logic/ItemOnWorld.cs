@@ -58,7 +58,7 @@ public class ItemOnWorld : MonoBehaviour
             AddNewItem();
             gameObject.SetActive(false);
             _Button.SetActive(false);
-            EventHandler.CallAfterItemPickedEvent(this.gameObject, _playerInventory._itemList.Count - 1);
+            EventHandler.CallAfterItemPickedEvent(gameObject, _playerInventory._itemList.Count - 1);
         }
     }
 
@@ -67,7 +67,7 @@ public class ItemOnWorld : MonoBehaviour
         if (!_playerInventory._itemList.Contains(_thisItem))
         {
             _playerInventory._itemList.Add(_thisItem);
-            EventHandler.CallAfterItemPickedEvent(this.gameObject, _playerInventory._itemList.Count - 1);
+            EventHandler.CallAfterItemPickedEvent(gameObject, _playerInventory._itemList.Count - 1);
             // Debug.Log("got item !");
         }
         else

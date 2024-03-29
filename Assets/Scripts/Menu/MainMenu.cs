@@ -14,7 +14,9 @@ public class MainMenu : MonoBehaviour
     public void PlayNewGame()
     {
         EventHandler.CallGameStateChangeEvent(GameState.NewGame);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        EventHandler.CallBeforeSceneUnloadEvent();
+        LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public async void ResumeGame()
