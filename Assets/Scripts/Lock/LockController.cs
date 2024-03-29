@@ -27,6 +27,8 @@ public class LockController : MonoBehaviour
             Debug.Log("password correct !");
             _cabinet.GetComponent<Interactive>()._isDone = true;
             Destroy(_lockUI);
+            // 除了destroy 有沒有別的方法
+            //
         }
         else 
             _hint.SetActive(true);

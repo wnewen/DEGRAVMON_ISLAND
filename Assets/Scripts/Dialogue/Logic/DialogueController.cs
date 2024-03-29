@@ -10,11 +10,27 @@ public class DialogueController : MonoBehaviour
     private Stack<string> _dialogueInitialStack;
     private Stack<string> _dialogueFinishedStack;
 
-    private bool _isTalking;
+    private bool _isType;
+    private Coroutine _dialogueRoutine;
 
     private void Awake() 
     {
         FillDialogueStack();
+    }
+
+    private void OnEnable()
+    {
+        EventHandler.DialogueTypeFinishedEvent += OnDialogueTypeFinishedEvent;
+    }
+
+    private void OnDisable()
+    {
+         EventHandler.DialogueTypeFinishedEvent -= OnDialogueTypeFinishedEvent;
+    }
+
+    private void OnDialogueTypeFinishedEvent()
+    {
+        _isType = false;
     }
 
     private void FillDialogueStack()
@@ -34,33 +50,35 @@ public class DialogueController : MonoBehaviour
 
     public void ShowDialogueInitial()
     {
-        if (!_isTalking)
-            StartCoroutine(DialogueRoutine(_dialogueInitialStack));
+        StartCoroutine(DialogueRoutine(_dialogueInitialStack));        
     }
 
     public void ShowDialogueFinished()
     {
-        if (!_isTalking)
-            StartCoroutine(DialogueRoutine(_dialogueFinishedStack));
+        StartCoroutine(DialogueRoutine(_dialogueFinishedStack));
     }
 
     private IEnumerator DialogueRoutine(Stack<string> data)
     {
-        _isTalking = true;
-        if (data.TryPop(out string result))
+        if (_isType)
         {
-            EventHandler.CallShowDialogueEvent(result);
+            EventHandler.CallShowDialogueEvent("press again");
             yield return null;
-            _isTalking = false;
-            // EventHandler.CallGameStateChangeEvent(GameState.Pause);
+            _isType = false;
         }
         else
         {
-            EventHandler.CallShowDialogueEvent(string.Empty);
-            FillDialogueStack();
-            _isTalking = false;
-            // EventHandler.CallGameStateChangeEvent(GameState.GamePlay);
+            if (data.TryPop(out string result))
+            {
+                _isType = true;
+                EventHandler.CallShowDialogueEvent(result);
+                yield return null;
+            }
+            else
+            {
+                EventHandler.CallShowDialogueEvent(string.Empty);
+                FillDialogueStack();
+            }
         }
     }
-
 }

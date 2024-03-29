@@ -40,4 +40,10 @@ public static class EventHandler
     {
         GameStateChangeEvent?.Invoke(gameState);
     }
+
+    public static event Action DialogueTypeFinishedEvent;
+    public static void CallDialogueTypeFinishedEvent()
+    {
+        DialogueTypeFinishedEvent?.Invoke();
+    }
 }
