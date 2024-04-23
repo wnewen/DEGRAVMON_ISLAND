@@ -19,7 +19,7 @@ public class MainMenu : MonoBehaviour
         LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-    public async void ResumeGame()
+    public void ResumeGame()
     {
         EventHandler.CallBeforeSceneUnloadEvent();
         // SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1).completed += OnSceneLoaded;
@@ -42,20 +42,4 @@ public class MainMenu : MonoBehaviour
         EventHandler.CallAfterSceneLoadedEvent();
     }
 
-    public void GrassHill01()
-    {
-        LoadScene(1);
-    }
-    public void LandSlideIncedent()
-    {
-        LoadScene(2);
-    }
-    public void Office()
-    {
-        LoadScene(3);
-    }
-    public void ModernHome()
-    {
-        LoadScene(4);
-    }
 }
