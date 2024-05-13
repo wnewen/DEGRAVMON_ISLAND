@@ -9,8 +9,6 @@ public class TalkButton : MonoBehaviour
     [SerializeField] private float _detectionRadius = 5.0f;
     private bool _playerWasInside = false;
 
-    [SerializeField] private Item _interactiveItem;
-
     private void Update() 
     {
         Vector3 _objectPosition = transform.position;
@@ -52,7 +50,8 @@ public class TalkButton : MonoBehaviour
             var interactive = this.gameObject.GetComponent<Interactive>();
             if (interactive != null)
             {
-                interactive.CheckItem();
+                // interactive.CheckItem();
+                interactive.InteractingAction();
             }
             else
             {

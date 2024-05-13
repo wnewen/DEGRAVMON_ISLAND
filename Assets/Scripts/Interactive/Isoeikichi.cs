@@ -12,7 +12,16 @@ public class Isoeikichi : Interactive
         _dialogueController = GetComponent<DialogueController>();
     }
 
-    protected override void InteractingAction()
+    public override void CheckItem(string selectingItem)
+    {
+        if(selectingItem == _requiredItem._itemName)
+        {
+            _isDone = true;
+        }
+        InteractingAction();
+    }
+
+    public override void InteractingAction()
     {
         if (_isDone)
             _dialogueController.ShowDialogueFinished();

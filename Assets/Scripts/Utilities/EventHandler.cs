@@ -46,4 +46,10 @@ public static class EventHandler
     {
         DialogueTypeFinishedEvent?.Invoke();
     }
+
+    public static event Action<string> ItemSelectingEvent;
+    public static void CallItemSelectingEvent(string selectingItem)
+    {
+        ItemSelectingEvent?.Invoke(selectingItem);
+    }
 }

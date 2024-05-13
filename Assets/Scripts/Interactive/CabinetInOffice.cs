@@ -18,7 +18,7 @@ public class CabinetInOffice : Interactive
         // _watch = GameObject.Find("Watch");
     }
 
-    protected override void InteractingAction()
+    public override void InteractingAction()
     {
         if (_isDone)
         {

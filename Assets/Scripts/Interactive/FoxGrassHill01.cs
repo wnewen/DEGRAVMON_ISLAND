@@ -12,7 +12,7 @@ public class FoxGrassHill01 : Interactive
         _dialogueController = GetComponent<DialogueController>();
     }
 
-    protected override void InteractingAction()
+    public override void InteractingAction()
     {
         if (_isDone)
             _dialogueController.ShowDialogueFinished();

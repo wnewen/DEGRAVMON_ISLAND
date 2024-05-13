@@ -7,7 +7,7 @@ public class Interactive : MonoBehaviour
     private Interactive instance;
     public Item _requiredItem;
     public bool _isDone;
-    public Inventory _myBag;
+    //public Inventory _myBag;
     private bool _congradulations;
     
 
@@ -17,23 +17,23 @@ public class Interactive : MonoBehaviour
     }
 
     /* check if there is required item in myBag  */
-    public void CheckItem()
+    public virtual void CheckItem(string selectingItem)
     {
-        var itemList = instance._myBag._itemList;
-        for (int i = 0; i < itemList.Count; i++)
-        {
-            if (itemList[i] == _requiredItem)
+        //var itemList = instance._myBag._itemList;
+        //for (int i = 0; i < itemList.Count; i++)
+        //{
+            if (selectingItem == _requiredItem._itemName)
             {
                 _isDone = true;
-                
+
                 /* use item and remove item from bag */
                 EventHandler.CallItemUsedEvent(_requiredItem);
             }
-        }
+        //}
         InteractingAction();
     }
 
-    protected virtual void InteractingAction()
+    public virtual void InteractingAction()
     {
         Debug.Log("做動作");
     }

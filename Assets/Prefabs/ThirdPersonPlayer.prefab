@@ -138,7 +138,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3570506338880601108}
-  m_LocalRotation: {x: 0.021735908, y: 2.219397e-16, z: 7.556577e-19, w: 0.9997638}
+  m_LocalRotation: {x: 0.0067198914, y: 0.95078516, z: -0.020671064, w: 0.30908778}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -343,7 +343,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3570506339200374951}
-  m_LocalRotation: {x: 0.094395146, y: 0.013212602, z: -0.0012529105, w: 0.9954464}
+  m_LocalRotation: {x: 0.027991742, y: 0.950764, z: -0.090158045, w: 0.29518765}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -422,7 +422,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3570506339737255553}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.4399986, z: -3.2299957}
+  m_LocalPosition: {x: -1.7640818, y: 2.4399986, z: 2.196521}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -945,7 +945,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3570506340640026454}
-  m_LocalRotation: {x: 0.2098551, y: -0.000000008411619, z: 0.000000001805423, w: 0.97773254}
+  m_LocalRotation: {x: 0.06487897, y: 0.9298331, z: -0.19957425, w: 0.30227655}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1284,6 +1284,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterData: {fileID: 11400000, guid: 32d560cb25662c9408465ae38118cf02, type: 2}
+--- !u!114 &582816785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148639771249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5043e268914d1aa46a5bcdb422010435, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _itemUseButton: {fileID: 0}
+  _myBag: {fileID: 11400000, guid: c0d08572283d97f4eb4adb7b070be8fd, type: 2}
 --- !u!1001 &3570506339731754869
 PrefabInstance:
   m_ObjectHideFlags: 0
