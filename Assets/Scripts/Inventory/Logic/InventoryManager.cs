@@ -166,7 +166,7 @@ public class InventoryManager : Singleton<InventoryManager>
 
     public void UseWatch()
     {
-        _usedWatch = true;
+        _usedWatch = !_usedWatch;
         //TODO: after got fur watch broken
     }
 
@@ -175,16 +175,22 @@ public class InventoryManager : Singleton<InventoryManager>
         if(itemName == "手錶")
         {
             if (Instance._usedWatch)
+            {
                 Instance._watchButtonBack.SetActive(true);
+                Instance._watchButton.SetActive(false);
+            }
+                
             if (!Instance._usedWatch)
+            {
                 Instance._watchButton.SetActive(true);
-            
+                Instance._watchButtonBack.SetActive(false);
+            }
         }
         else
         {
-            if (Instance._usedWatch)
+            //if (Instance._usedWatch)
                 Instance._watchButtonBack.SetActive(false);
-            if (!Instance._usedWatch)
+            //if (!Instance._usedWatch)
                 Instance._watchButton.SetActive(false);
             
         }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WhiteSteamedBun
   m_EditorClassIdentifier: 
   _itemName: "\u767D\u9945\u982D"
-  _itemImage: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  _itemModel: {fileID: 919132149155446097, guid: f558e770077c385479372dde4c14cfe9, type: 3}
+  _itemImage: {fileID: 21300000, guid: 6aa2243ab138a4f4599c0a25dc0b148b, type: 3}
+  _itemModel: {fileID: 7449542024045697961, guid: c5764aca7c894d7408e49aa4d72e6a63, type: 3}
   _itemHeld: 0
   _itemInfo: "\u9999\u5674\u5674\u7684\u767D\u9945\u982D\uFF0C\u5403\u4E00\u9846\u5C31\u80FD\u5403\u5F97\u5F88\u98FD\u3002"

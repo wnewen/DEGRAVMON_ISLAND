@@ -12,6 +12,7 @@ public class LockController : MonoBehaviour
     [SerializeField] private GameObject _numberOnLock02;
     [SerializeField] private GameObject _numberOnLock03;
     private  bool _isCorrect;
+    [SerializeField] private GameObject _watch;
     public void CheckPassword()
     {
         _isCorrect = true;
@@ -26,7 +27,9 @@ public class LockController : MonoBehaviour
         {
             Debug.Log("password correct !");
             _cabinet.GetComponent<Interactive>()._isDone = true;
-            Destroy(_lockUI);
+            _watch.SetActive(true);
+            _lockUI.SetActive(false);
+            //Destroy(_lockUI);
             // 除了destroy 有沒有別的方法
             //
         }

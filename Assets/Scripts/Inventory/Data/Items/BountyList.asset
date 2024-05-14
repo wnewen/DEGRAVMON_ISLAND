@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BountyList
   m_EditorClassIdentifier: 
   _itemName: "\u8CDE\u91D1\u55AE"
-  _itemImage: {fileID: 21300000, guid: dcc00bf7e1f97e244bedf09f5b9dd0b5, type: 3}
-  _itemModel: {fileID: 231189934952163319, guid: f70b111a608ac1e4c9ea2b241f5995d1, type: 3}
+  _itemImage: {fileID: 21300000, guid: 62353e7a5e21b474ab525274f2fe4bd4, type: 3}
+  _itemModel: {fileID: 6135706747274392890, guid: e61c9d99b93709947900ca1ea8008e04, type: 3}
   _itemHeld: 0
   _itemInfo: "\u5929\u7687\u767C\u4E0B\u7684\u8CDE\u91D1\u55AE\u3002"

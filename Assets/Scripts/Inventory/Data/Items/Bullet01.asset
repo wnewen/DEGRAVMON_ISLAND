@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6303ae593c872724ba2f1fe3a345c4bc, type: 3}
   m_Name: Bullet01
   m_EditorClassIdentifier: 
-  _itemName: "\u5B50\u5F4801"
-  _itemImage: {fileID: 21300000, guid: 98cf3a131818fb045886be20a8807dc2, type: 3}
+  _itemName: "\u5B50\u5F48"
+  _itemImage: {fileID: 21300000, guid: d7ef68d559c849d459308a557ac64a0c, type: 3}
   _itemModel: {fileID: 1822007640582417151, guid: 9fda41cec23ebfa40a83e6fd2391a7a8, type: 3}
   _itemHeld: 0
   _itemInfo: "\u5B50\u5F48\u3002"

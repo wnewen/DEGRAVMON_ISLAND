@@ -20,26 +20,27 @@ public class CabinetInOffice : Interactive
 
     public override void InteractingAction()
     {
-        if (_isDone)
+        if (!_isDone)
         {
-            // _dialogueController.ShowDialogueFinished();
-            //TODO: Open the cabinet
-            _watch.SetActive(true);
+            //// _dialogueController.ShowDialogueFinished();
+            ////TODO: Open the cabinet
+            //_watch.SetActive(true);
+            //_isLockUIOpen = !_isLockUIOpen;
+            //_LockUI.SetActive(_isLockUIOpen);
             _isLockUIOpen = !_isLockUIOpen;
             _LockUI.SetActive(_isLockUIOpen);
         }
-        else
-        {
-            if(!_playerGotToken)
-            {
-                _playerGotToken = true;
-            }
-            //_dialogueController.ShowDialogueInitial();
+        //else
+        //{
+        //    if(!_playerGotToken)
+        //    {
+        //        _playerGotToken = true;
+        //    }
+        //    //_dialogueController.ShowDialogueInitial();
 
-            /* show ui to input the password */
-            _isLockUIOpen = !_isLockUIOpen;
-            _LockUI.SetActive(_isLockUIOpen);
-        }
+        //    /* show ui to input the password */
+            
+        //}
             
     }
 }
